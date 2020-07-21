@@ -47,10 +47,8 @@ const AccountDashboard = () => {
   }, []);
 
   async function fetchServiceHealth(accountId) {
-    console.log("http://8493a6129097.ngrok.io/actuator/health");
-    const res = await fetch(
-      "https://cors-anywhere.herokuapp.com/http://8493a6129097.ngrok.io/actuator/health"
-    );
+    console.log("http://localhost:4000/actuator/health");
+    const res = await fetch("http://localhost:4000/actuator/health");
 
     const responseJSON = res.data;
     console.log(responseJSON);
