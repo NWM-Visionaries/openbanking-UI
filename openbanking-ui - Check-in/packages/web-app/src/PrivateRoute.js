@@ -7,8 +7,8 @@ const PrivateRoute = ({ children, ...rest }) => {
     const token = useSelector(
         (state) => state.auth.token || (localStorage.getItem('token') && localStorage.getItem('token')!=='undefined')
     )
-    //return token ? <Route {...rest}>{children}</Route> : <Redirect to="/" />
-    return  <Route {...rest}>{children}</Route>
+    return token ? <Route {...rest}>{children}</Route> : <Redirect to="/" />
+    //return  <Route {...rest}>{children}</Route>
 }
 
 export default PrivateRoute

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { setRequestInterceptor } from './request-interceptor'
 import { setError, setLoader } from '../actions/common'
 
-const base_url = 'http://localhost:3001'
+const base_url = 'http://localhost:4000/open-banking/v3'
 
 //const base_url = 'http://b0995d6022ea.ngrok.io/open-banking/v3'
 

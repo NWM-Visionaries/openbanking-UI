@@ -16,12 +16,12 @@ export default function AccountTable( { data = {} } )
     return <div>
         <table className="tableStyle">
             <tr className="rowStyle">
-                <th className="col-sm">Account ID</th>
-                <th className="col-sm">Currency</th>
-                <th className="col-sm">Description</th>
-                <th className="col-sm">Account Type</th>
-                <th className="col-sm">Nickname</th>
-                <th className="col-sm" colSpan={3}>Actions </th>
+                <th className="col-md">Nickname</th>
+                <th className="col-md">Currency</th>
+                <th className="col-md">Description</th>
+                <th className="col-md">Account Type</th>
+                <th className="col-md">Account ID</th>
+                <th className="col-md" colSpan={2}>Actions </th>
             </tr>
         {AccountList}
         </table>
