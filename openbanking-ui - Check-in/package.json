@@ -1,0 +1,31 @@
+{
+  "name": "@openbanking/ui",
+  "version": "0.0.1",
+  "description": "Open Banking Aggregator UI",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "json-server": "^0.16.1",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "@culturehq/charts": "1.2.2"
+  },
+  "scripts": {
+    "start": "lerna run --scope @openbanking/web-app --include-dependencies --parallel start",
+    "mock-server": "json-server db.json --routes routes.json --middlewares jsonserver-middleware.js --port 3001 --watch",
+    "postinstall": "lerna bootstrap --hoist"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,html,css,json}": "prettier --write"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "apexcharts": "^3.19.3",
+    "react-apexcharts": "^1.3.7"
+  }
+}

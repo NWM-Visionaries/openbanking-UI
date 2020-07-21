@@ -1,0 +1,2 @@
+export const SET_ACCOUNT_ID = 'SET_ACCOUNT_ID'
+export const SET_ACCOUNT_DATA = 'SET_ACCOUNT_DATA'
