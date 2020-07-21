@@ -1,4 +1,5 @@
 import React,  { useState, useEffect }  from 'react'
+import logo from './open-banking.jpg'
 import { useDispatch, useSelector } from 'react-redux'
 import {
     getAccountList,
@@ -39,9 +40,17 @@ const AccountDashboard = () => {
         fetchData();
       },[]);
 
+      async function fetchAccountRecommendations(accountId)
+      {
+        const res = await fetch('http://899f97053d28.ngrok.io/open-banking/recommendation/getRecs?accountId='+accountId);
+          
+          console.log(res)
+          
+          res.json()
+            .then(res => setaccountsList(res))
+            .catch(err => setErrors(err));
+      }
 
-    console.log(accountList)
-    console.log(accountsList)
 
     let conditionalDivTag
 
@@ -72,12 +81,14 @@ const AccountDashboard = () => {
                 <div className="row">
                     <div className="col-sm">
                         <div className="journeyBtns">
-                        <button className="journeyBtn" onClick={() => getAccountList(dispatch)}>Account Details</button>
+                        {/*<button className="journeyBtn" onClick={() => getAccountList(dispatch)}>Account Details</button>
                         <button className="journeyBtn" onClick={() => getAccountById(dispatch, accountId)}>Get Recommendations</button>
                         </div>
                         <div className="journeyBtns">
                         <button className="journeyBtn" onClick={() => getAccountTransactions(dispatch, accountId)}>Expense Management</button>
                         <button className="journeyBtn" onClick={() => getAccountById(dispatch, accountId)}>Easy Billing</button>
+                        */}
+                        <img src={logo}></img>
                         </div>
                     </div>
                 </div>
